@@ -1,6 +1,9 @@
 # 🎙️ The Third Wheel
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0bc8ee6e-85c9-4266-8c2b-546f31621d3a/deploy-status)](https://app.netlify.com/sites/thethirdwheel/deploys)
+
 Website for The Third Wheel podcast hosted by [Aaron Conway](github.com/aaronconway7/) & [Hamish Lacmane](https://github.com/HamishLacmane).
+
 
 ## Stack
 
