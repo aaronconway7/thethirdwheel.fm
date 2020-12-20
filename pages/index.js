@@ -7,6 +7,8 @@ import {
     FaInstagram,
     FaTwitter,
     FaFacebookF,
+    FaTwitch,
+    FaPatreon,
 } from 'react-icons/fa'
 import { SiGooglepodcasts } from 'react-icons/si'
 
@@ -41,12 +43,29 @@ const players = [
         label: `Youtube`,
         bg: `#fe0302`,
     },
+]
+
+const extras = [
     {
         href: `http://clips.thethirdwheel.fm`,
         icon: FaYoutube,
-        pre: `Watch clips on`,
+        pre: `Clips on`,
         label: `Youtube`,
         bg: `#fe0302`,
+    },
+    {
+        href: `http://twitch.thethirdwheel.fm`,
+        icon: FaTwitch,
+        pre: `Streaming on`,
+        label: `Twitch`,
+        bg: `#6441A4`,
+    },
+    {
+        href: `http://patreon.thethirdwheel.fm`,
+        icon: FaPatreon,
+        pre: `Support on`,
+        label: `Patreon`,
+        bg: `#f96854`,
     },
 ]
 
@@ -124,6 +143,25 @@ const Home = () => (
                 >
                     Listen elsewhere?
                 </a>
+                <hr className={`border-2 border-dashed my-4`} />
+                {extras.map((link, i) => (
+                    <StyledLink
+                        key={i}
+                        href={link.href}
+                        target={`_blank`}
+                        className={`${link.label
+                            .toLowerCase()
+                            .replace(
+                                ` `,
+                                `-`
+                            )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                        bg={link.bg}
+                    >
+                        <span>{link.pre}</span>
+                        <link.icon className={`ml-1`} />
+                        <span className={`font-bold tracking-wide`}>{link.label}</span>
+                    </StyledLink>
+                ))}
             </div>
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
                 {socials.map((s, i) => (
@@ -155,7 +193,7 @@ const StyledLink = styled.a`
     background-color: ${({ bg }) => (bg ? bg : `white`)};
 
     &.google-podcasts {
-        color: black !important;
+        color: #0166d9 !important;
     }
 `
 
