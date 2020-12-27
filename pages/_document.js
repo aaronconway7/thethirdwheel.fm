@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import FacebookCover from '../public/facebook-cover-art.jpg'
-
 export default class MyDocument extends Document {
     render() {
         return (
@@ -37,7 +35,10 @@ export default class MyDocument extends Document {
                         property='og:description'
                         content={`🎙️ A podcast where we're joined by a “Third Wheel” each episode to learn a bit more about them, debate various topics and (occasionally) play some games whilst your hosts Aaron & Hamish take shots at each other and act as if they understand everything being spoken about 🙃. New episode every Sunday! 🚨`}
                     />
-                    <meta property='og:image' content={FacebookCover} />
+                    <meta
+                        property='og:image'
+                        content={`https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/71051939_133803417978936_2366083705111314432_o.jpg`}
+                    />
                     <meta property='og:url' content='https://thethirdwheel.fm' />
                     <meta name='twitter:card' content='summary_large_image' />
                     <meta property='og:site_name' content='The Third Wheel' />
