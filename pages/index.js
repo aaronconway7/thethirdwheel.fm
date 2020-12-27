@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styled from 'styled-components'
 import {
     FaSpotify,
@@ -92,10 +91,6 @@ const socials = [
 
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
-        <Head>
-            <title>The Third Wheel</title>
-            <link rel={`icon`} href={`/favicon.ico`} />
-        </Head>
         <main className={`flex-grow w-4/5 max-w-screen-sm mx-auto py-16 grid auto-rows-max gap-10`}>
             <img
                 src={`https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/2311175/2311175-1585324528884-90c7f17998877.jpg`}
@@ -108,6 +103,7 @@ const Home = () => (
                 </p>
                 <StyledYoutubeEmbed className={`shadow-md`}>
                     <iframe
+                        title={`The Third Wheel on Youtube`}
                         width='560'
                         height='315'
                         src='https://www.youtube.com/embed/videoseries?list=PL-Eg1IW3ZB27tXDZyfOl1SH6pu9YtlsVP'
