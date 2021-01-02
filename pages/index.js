@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import {
     FaSpotify,
@@ -92,11 +93,14 @@ const socials = [
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
         <main className={`flex-grow w-4/5 max-w-screen-sm mx-auto py-16 grid auto-rows-max gap-10`}>
-            <img
-                src={`https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/2311175/2311175-1585324528884-90c7f17998877.jpg`}
-                alt={`The Third Wheel Cover Art`}
-                className={`shadow-lg mx-auto w-48 md:w-64`}
-            />
+            <div className={`grid shadow-lg mx-auto`}>
+                <Image
+                    src={`/thumbnail-corona.jpg`}
+                    alt={'The Third Wheel Artwork'}
+                    width={250}
+                    height={250}
+                />
+            </div>
             <div className={`grid gap-2`}>
                 <p className={`text-center text-white uppercase font-bold tracking-wider italic`}>
                     Watch our latest ep 👇
@@ -126,6 +130,8 @@ const Home = () => (
                                 `-`
                             )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
                         bg={link.bg}
+                        aria-label={link.label.toLowerCase().replace(` `, `-`)}
+                        rel={`noopener noreferrer`}
                     >
                         <span>{link.pre}</span>
                         <link.icon className={`ml-1`} />
@@ -136,6 +142,8 @@ const Home = () => (
                     className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75`}
                     href={`https://anchor.fm/thethirdwheelfm`}
                     target={`_blank`}
+                    aria-label={`anchor`}
+                    rel={`noopener noreferrer`}
                 >
                     Listen elsewhere?
                 </a>
@@ -152,6 +160,8 @@ const Home = () => (
                                 `-`
                             )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
                         bg={link.bg}
+                        aria-label={link.label.toLowerCase().replace(` `, `-`)}
+                        rel={`noopener noreferrer`}
                     >
                         <span>{link.pre}</span>
                         <link.icon className={`ml-1`} />
@@ -166,6 +176,8 @@ const Home = () => (
                         bg={s.bg}
                         href={s.href}
                         target={`_blank`}
+                        aria-label={s.label.toLowerCase().replace(` `, `-`)}
+                        rel={`noopener noreferrer`}
                     >
                         <s.icon />
                     </StyledSocial>
