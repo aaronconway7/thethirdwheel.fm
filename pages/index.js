@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
 import {
@@ -16,28 +17,28 @@ import Footer from '../components/Footer'
 
 const players = [
     {
-        href: `http://spotify.thethirdwheel.fm`,
+        href: `/spotify`,
         icon: FaSpotify,
         pre: `Listen on`,
         label: `Spotify`,
         bg: `#1bd760`,
     },
     {
-        href: `http://apple.thethirdwheel.fm`,
+        href: `/apple`,
         icon: FaPodcast,
         pre: `Listen on`,
         label: `Apple Podcasts`,
         bg: `#B150E2`,
     },
     {
-        href: `http://google.thethirdwheel.fm`,
+        href: `/google`,
         icon: SiGooglepodcasts,
         pre: `Listen on`,
         label: `Google Podcasts`,
         bg: `#ffffff`,
     },
     {
-        href: `http://youtube.thethirdwheel.fm`,
+        href: `/youtube`,
         icon: FaYoutube,
         pre: `Watch on`,
         label: `Youtube`,
@@ -47,21 +48,21 @@ const players = [
 
 const extras = [
     {
-        href: `http://clips.thethirdwheel.fm`,
+        href: `/clips`,
         icon: FaYoutube,
         pre: `Clips on`,
         label: `Youtube`,
         bg: `#fe0302`,
     },
     {
-        href: `http://twitch.thethirdwheel.fm`,
+        href: `/twitch`,
         icon: FaTwitch,
         pre: `Streaming on`,
         label: `Twitch`,
         bg: `#6441A4`,
     },
     {
-        href: `http://patreon.thethirdwheel.fm`,
+        href: `/patreon`,
         icon: FaPatreon,
         pre: `Support on`,
         label: `Patreon`,
@@ -71,20 +72,20 @@ const extras = [
 
 const socials = [
     {
+        href: `/instagram`,
         label: `Instagram`,
-        href: `https://instagram.com/thethirdwheelfm`,
         icon: FaInstagram,
         bg: `#c13584`,
     },
     {
+        href: `/twitter`,
         label: `Twitter`,
-        href: `https://twitter.com/thethirdwheelfm`,
         icon: FaTwitter,
         bg: `#1da1f2`,
     },
     {
+        href: `/facebook`,
         label: `Facebook`,
-        href: `https://facebook.com/thethirdwheelfm`,
         icon: FaFacebookF,
         bg: `#4267B2`,
     },
@@ -119,24 +120,24 @@ const Home = () => (
             </div>
             <div className={`grid gap-4`}>
                 {players.map((link, i) => (
-                    <StyledLink
-                        key={i}
-                        href={link.href}
-                        target={`_blank`}
-                        className={`${link.label
-                            .toLowerCase()
-                            .replace(
-                                ` `,
-                                `-`
-                            )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
-                        bg={link.bg}
-                        aria-label={link.label.toLowerCase().replace(` `, `-`)}
-                        rel={`noopener noreferrer`}
-                    >
-                        <span>{link.pre}</span>
-                        <link.icon className={`ml-1`} />
-                        <span className={`font-bold tracking-wide`}>{link.label}</span>
-                    </StyledLink>
+                    <Link href={link.href} key={i}>
+                        <StyledLink
+                            target={`_blank`}
+                            className={`${link.label
+                                .toLowerCase()
+                                .replace(
+                                    ` `,
+                                    `-`
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                            bg={link.bg}
+                            aria-label={link.label.toLowerCase().replace(` `, `-`)}
+                            rel={`noopener noreferrer`}
+                        >
+                            <span>{link.pre}</span>
+                            <link.icon className={`ml-1`} />
+                            <span className={`font-bold tracking-wide`}>{link.label}</span>
+                        </StyledLink>
+                    </Link>
                 ))}
                 <a
                     className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75`}
@@ -149,39 +150,39 @@ const Home = () => (
                 </a>
                 <hr className={`border-2 border-dashed my-4`} />
                 {extras.map((link, i) => (
-                    <StyledLink
-                        key={i}
-                        href={link.href}
-                        target={`_blank`}
-                        className={`${link.label
-                            .toLowerCase()
-                            .replace(
-                                ` `,
-                                `-`
-                            )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
-                        bg={link.bg}
-                        aria-label={link.label.toLowerCase().replace(` `, `-`)}
-                        rel={`noopener noreferrer`}
-                    >
-                        <span>{link.pre}</span>
-                        <link.icon className={`ml-1`} />
-                        <span className={`font-bold tracking-wide`}>{link.label}</span>
-                    </StyledLink>
+                    <Link href={link.href} key={i}>
+                        <StyledLink
+                            target={`_blank`}
+                            className={`${link.label
+                                .toLowerCase()
+                                .replace(
+                                    ` `,
+                                    `-`
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                            bg={link.bg}
+                            aria-label={link.label.toLowerCase().replace(` `, `-`)}
+                            rel={`noopener noreferrer`}
+                        >
+                            <span>{link.pre}</span>
+                            <link.icon className={`ml-1`} />
+                            <span className={`font-bold tracking-wide`}>{link.label}</span>
+                        </StyledLink>
+                    </Link>
                 ))}
             </div>
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
                 {socials.map((s, i) => (
-                    <StyledSocial
-                        key={i}
-                        className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md`}
-                        bg={s.bg}
-                        href={s.href}
-                        target={`_blank`}
-                        aria-label={s.label.toLowerCase().replace(` `, `-`)}
-                        rel={`noopener noreferrer`}
-                    >
-                        <s.icon />
-                    </StyledSocial>
+                    <Link href={s.href} key={i}>
+                        <StyledSocial
+                            className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md`}
+                            bg={s.bg}
+                            target={`_blank`}
+                            aria-label={s.label.toLowerCase().replace(` `, `-`)}
+                            rel={`noopener noreferrer`}
+                        >
+                            <s.icon />
+                        </StyledSocial>
+                    </Link>
                 ))}
             </div>
         </main>
@@ -198,7 +199,7 @@ const StyledHome = styled.div`
     background-attachment: fixed;
 `
 
-const StyledLink = styled.a`
+const StyledLink = styled.div`
     background-color: ${({ bg }) => (bg ? bg : `white`)};
 
     &.google-podcasts {
