@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled from 'styled-components'
 import {
     FaSpotify,
@@ -13,6 +12,8 @@ import {
 import { SiGooglepodcasts } from 'react-icons/si'
 
 import Footer from '../components/Footer'
+
+import Thumbnail from '../public/thumbnail-corona.webp'
 
 const players = [
     {
@@ -93,14 +94,11 @@ const socials = [
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
         <main className={`flex-grow w-4/5 max-w-screen-sm mx-auto py-16 grid auto-rows-max gap-10`}>
-            <div className={`grid shadow-lg mx-auto`}>
-                <Image
-                    src={`/thumbnail-corona.jpg`}
-                    alt={'The Third Wheel Artwork'}
-                    width={250}
-                    height={250}
-                />
-            </div>
+            <img
+                src={Thumbnail}
+                alt={`The Third Wheel Cover Art`}
+                className={`shadow-lg mx-auto w-48 md:w-64`}
+            />
             <div className={`grid gap-2`}>
                 <p className={`text-center text-white uppercase font-bold tracking-wider italic`}>
                     Watch our latest ep 👇
