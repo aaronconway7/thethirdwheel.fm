@@ -87,7 +87,7 @@ const Home = () => (
             </div>
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
                 {socials.map((s, i) => (
-                    <Link href={s.href} key={i}>
+                    <Link href={s.href} key={i} passHref>
                         <StyledSocial
                             className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md cursor-pointer`}
                             bg={s.bg}
