@@ -1,8 +1,3 @@
-#Subdomains
-http://anchor.thethirdwheel.fm https://anchor.fm/thethirdwheelfm
-https://anchor.thethirdwheel.fm https://anchor.fm/thethirdwheelfm
-anchor.thethirdwheel.fm https://anchor.fm/thethirdwheelfm
-
 # Players
 /anchor     https://anchor.fm/thethirdwheelfm
 /apple      https://podcasts.apple.com/gb/podcast/the-third-wheel/id1481766848
@@ -18,7 +13,7 @@ anchor.thethirdwheel.fm https://anchor.fm/thethirdwheelfm
 # Extras
 /clips      https://www.youtube.com/channel/UCfSWtvM3C4Oz8WyEWV80dzQ
 /discord    https://discord.gg/Sr7ac3z
-/twitch     https://www.twitch.tv/thethirdwheel.fm
+/twitch     https://www.twitch.tv/thethirdwheelfm
 /questions  https://airtable.com/shrSm66UR2YYQscXn
 /games      https://airtable.com/shrR3tb0N04Y8JkIv
 /patreon    https://www.patreon.com/thethirdwheelfm
