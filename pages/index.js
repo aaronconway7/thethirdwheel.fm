@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import {
     FaSpotify,
@@ -13,7 +14,7 @@ import { SiGooglepodcasts } from 'react-icons/si'
 
 import Footer from '../components/Footer'
 
-import Thumbnail from '../public/thumbnail-corona.jpg'
+// import Thumbnail from '../public/thumbnail-corona.jpg'
 
 const players = [
     {
@@ -94,11 +95,14 @@ const socials = [
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
         <main className={`flex-grow w-4/5 max-w-screen-sm mx-auto py-16 grid auto-rows-max gap-10`}>
-            <img
-                src={Thumbnail}
-                alt={`The Third Wheel Cover Art`}
-                className={`shadow-lg mx-auto w-48 md:w-64`}
-            />
+            <div className={`grid shadow-lg mx-auto`}>
+                <Image
+                    src={`/thumbnail-corona.jpg`}
+                    alt={'The Third Wheel Artwork'}
+                    width={250}
+                    height={250}
+                />
+            </div>
             <div className={`grid gap-2`}>
                 <p className={`text-center text-white uppercase font-bold tracking-wider italic`}>
                     Watch our latest ep 👇
@@ -170,6 +174,7 @@ const Home = () => (
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
                 {socials.map((s, i) => (
                     <StyledSocial
+                        key={i}
                         className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md`}
                         bg={s.bg}
                         href={s.href}
