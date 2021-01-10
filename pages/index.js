@@ -114,7 +114,7 @@ const StyledHome = styled.div`
     background-attachment: fixed;
 `
 
-const StyledLink = styled.div`
+const StyledLink = styled.a`
     background-color: ${({ bg }) => (bg ? bg : `white`)};
 
     &.google-podcasts {
