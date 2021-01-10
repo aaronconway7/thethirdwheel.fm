@@ -1,95 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
-import {
-    FaSpotify,
-    FaPodcast,
-    FaYoutube,
-    FaInstagram,
-    FaTwitter,
-    FaFacebookF,
-    FaTwitch,
-    FaPatreon,
-} from 'react-icons/fa'
-import { SiGooglepodcasts } from 'react-icons/si'
 
 import Footer from '../components/Footer'
-
-const players = [
-    {
-        href: `/spotify`,
-        icon: FaSpotify,
-        pre: `Listen on`,
-        label: `Spotify`,
-        bg: `#1bd760`,
-    },
-    {
-        href: `/apple`,
-        icon: FaPodcast,
-        pre: `Listen on`,
-        label: `Apple Podcasts`,
-        bg: `#B150E2`,
-    },
-    {
-        href: `/google`,
-        icon: SiGooglepodcasts,
-        pre: `Listen on`,
-        label: `Google Podcasts`,
-        bg: `#ffffff`,
-    },
-    {
-        href: `/youtube`,
-        icon: FaYoutube,
-        pre: `Watch on`,
-        label: `Youtube`,
-        bg: `#fe0302`,
-    },
-]
-
-const extras = [
-    {
-        href: `/clips`,
-        icon: FaYoutube,
-        pre: `Clips on`,
-        label: `Youtube`,
-        bg: `#fe0302`,
-    },
-    {
-        href: `/twitch`,
-        icon: FaTwitch,
-        pre: `Streaming on`,
-        label: `Twitch`,
-        bg: `#6441A4`,
-    },
-    {
-        href: `/patreon`,
-        icon: FaPatreon,
-        pre: `Support on`,
-        label: `Patreon`,
-        bg: `#f96854`,
-    },
-]
-
-const socials = [
-    {
-        href: `/instagram`,
-        label: `Instagram`,
-        icon: FaInstagram,
-        bg: `#c13584`,
-    },
-    {
-        href: `/twitter`,
-        label: `Twitter`,
-        icon: FaTwitter,
-        bg: `#1da1f2`,
-    },
-    {
-        href: `/facebook`,
-        label: `Facebook`,
-        icon: FaFacebookF,
-        bg: `#4267B2`,
-    },
-]
+import { players, extras, socials } from '../constants/links'
 
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
@@ -120,16 +34,16 @@ const Home = () => (
             </div>
             <div className={`grid gap-4`}>
                 {players.map((link, i) => (
-                    <Link href={link.href} key={i}>
+                    <Link href={link.href} key={i} passHref>
                         <StyledLink
-                            target={`_blank`}
                             className={`${link.label
                                 .toLowerCase()
                                 .replace(
                                     ` `,
                                     `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
                             bg={link.bg}
+                            target={`_blank`}
                             aria-label={link.label.toLowerCase().replace(` `, `-`)}
                             rel={`noopener noreferrer`}
                         >
@@ -139,27 +53,28 @@ const Home = () => (
                         </StyledLink>
                     </Link>
                 ))}
-                <a
-                    className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75`}
-                    href={`https://anchor.fm/thethirdwheelfm`}
-                    target={`_blank`}
-                    aria-label={`anchor`}
-                    rel={`noopener noreferrer`}
-                >
-                    Listen elsewhere?
-                </a>
+                <Link href={`/anchor`}>
+                    <a
+                        className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75 cursor-pointer`}
+                        target={`_blank`}
+                        aria-label={`anchor`}
+                        rel={`noopener noreferrer`}
+                    >
+                        Listen elsewhere?
+                    </a>
+                </Link>
                 <hr className={`border-2 border-dashed my-4`} />
                 {extras.map((link, i) => (
-                    <Link href={link.href} key={i}>
+                    <Link href={link.href} key={i} passHref>
                         <StyledLink
-                            target={`_blank`}
                             className={`${link.label
                                 .toLowerCase()
                                 .replace(
                                     ` `,
                                     `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
                             bg={link.bg}
+                            target={`_blank`}
                             aria-label={link.label.toLowerCase().replace(` `, `-`)}
                             rel={`noopener noreferrer`}
                         >
@@ -174,7 +89,7 @@ const Home = () => (
                 {socials.map((s, i) => (
                     <Link href={s.href} key={i}>
                         <StyledSocial
-                            className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md`}
+                            className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md cursor-pointer`}
                             bg={s.bg}
                             target={`_blank`}
                             aria-label={s.label.toLowerCase().replace(` `, `-`)}

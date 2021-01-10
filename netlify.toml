@@ -3,3 +3,9 @@
 
 [[plugins]]
     package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+    from = "https://spotify.thethirdwheel.fm"
+    to = "https://open.spotify.com/show/4ra0nYXS9OwPU5Zl0Noyus?si=46svKgylTnCDxtbbuzoVrg"
+    status = 301
+    force = false
