@@ -14,8 +14,6 @@ import { SiGooglepodcasts } from 'react-icons/si'
 
 import Footer from '../components/Footer'
 
-// import Thumbnail from '../public/thumbnail-corona.jpg'
-
 const players = [
     {
         href: `http://spotify.thethirdwheel.fm`,
@@ -97,7 +95,7 @@ const Home = () => (
         <main className={`flex-grow w-4/5 max-w-screen-sm mx-auto py-16 grid auto-rows-max gap-10`}>
             <div className={`grid shadow-lg mx-auto`}>
                 <Image
-                    src={`/thumbnail-corona.jpg`}
+                    src={`/v1610308983/the-third-wheel/thumbnail-corona.jpg`}
                     alt={'The Third Wheel Artwork'}
                     width={250}
                     height={250}
@@ -110,11 +108,11 @@ const Home = () => (
                 <StyledYoutubeEmbed className={`shadow-md`}>
                     <iframe
                         title={`The Third Wheel on Youtube`}
-                        width='560'
-                        height='315'
-                        src='https://www.youtube.com/embed/videoseries?list=PL-Eg1IW3ZB27tXDZyfOl1SH6pu9YtlsVP'
-                        frameBorder='0'
-                        allow='autoplay; encrypted-media'
+                        width={`560`}
+                        height={`315`}
+                        src={`https://www.youtube.com/embed/videoseries?list=PL-Eg1IW3ZB27tXDZyfOl1SH6pu9YtlsVP`}
+                        frameBorder={`0`}
+                        allow={`autoplay; encrypted-media`}
                         allowFullScreen
                     ></iframe>
                 </StyledYoutubeEmbed>

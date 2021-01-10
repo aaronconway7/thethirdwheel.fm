@@ -11,7 +11,7 @@ const Footer = () => (
         </svg>
         <div className={`absolute bottom-0 right-0 mr-8 mb-1`}>
             <Image
-                src={`/aaron-gif.gif`}
+                src={`/v1610308982/the-third-wheel/aaron-gif.gif`}
                 alt={'Aaron Conway'}
                 layout={`fixed`}
                 width={50}
@@ -20,7 +20,7 @@ const Footer = () => (
         </div>
         <div className={`absolute bottom-0 right-0 mb-1`}>
             <Image
-                src={`/hamish-gif.gif`}
+                src={`/v1610308981/the-third-wheel/hamish-gif.gif`}
                 alt={'Hamish Lacmane'}
                 layout={`fixed`}
                 width={50}
