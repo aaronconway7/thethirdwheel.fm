@@ -18,5 +18,8 @@
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.2",
     "typeface-kanit": "^1.1.13"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^1.0.5"
   }
 }
