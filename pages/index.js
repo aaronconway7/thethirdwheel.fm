@@ -13,7 +13,7 @@ import { SiGooglepodcasts } from 'react-icons/si'
 
 import Footer from '../components/Footer'
 
-import Thumbnail from '../public/thumbnail-corona.webp'
+import Thumbnail from '../public/thumbnail-corona.jpg'
 
 const players = [
     {
