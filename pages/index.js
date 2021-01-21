@@ -36,16 +36,16 @@ const Home = () => (
             </div>
             <div className={`grid gap-4`}>
                 {players.map((link, i) => (
-                    <Link href={link.href} key={i}>
+                    <Link href={link.href} key={i} passHref>
                         <StyledLink
-                            target={`_blank`}
                             className={`${link.label
                                 .toLowerCase()
                                 .replace(
                                     ` `,
                                     `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
                             bg={link.bg}
+                            target={`_blank`}
                             aria-label={link.label.toLowerCase().replace(` `, `-`)}
                             rel={`noopener noreferrer`}
                         >
@@ -55,27 +55,28 @@ const Home = () => (
                         </StyledLink>
                     </Link>
                 ))}
-                <a
-                    className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75`}
-                    href={`https://anchor.fm/thethirdwheelfm`}
-                    target={`_blank`}
-                    aria-label={`anchor`}
-                    rel={`noopener noreferrer`}
-                >
-                    Listen elsewhere?
-                </a>
+                <Link href={`/anchor`}>
+                    <a
+                        className={`w-max mx-auto text-white italic underline tracking-wide hover:opacity-75 cursor-pointer`}
+                        target={`_blank`}
+                        aria-label={`anchor`}
+                        rel={`noopener noreferrer`}
+                    >
+                        Listen elsewhere?
+                    </a>
+                </Link>
                 <hr className={`border-2 border-dashed my-4`} />
                 {extras.map((link, i) => (
-                    <Link href={link.href} key={i}>
+                    <Link href={link.href} key={i} passHref>
                         <StyledLink
-                            target={`_blank`}
                             className={`${link.label
                                 .toLowerCase()
                                 .replace(
                                     ` `,
                                     `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white`}
+                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
                             bg={link.bg}
+                            target={`_blank`}
                             aria-label={link.label.toLowerCase().replace(` `, `-`)}
                             rel={`noopener noreferrer`}
                         >
@@ -88,9 +89,9 @@ const Home = () => (
             </div>
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
                 {socials.map((s, i) => (
-                    <Link href={s.href} key={i}>
+                    <Link href={s.href} key={i} passHref>
                         <StyledSocial
-                            className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md`}
+                            className={`rounded-lg grid text-white w-8 h-8 place-items-center shadow hover:shadow-md cursor-pointer`}
                             bg={s.bg}
                             target={`_blank`}
                             aria-label={s.label.toLowerCase().replace(` `, `-`)}
@@ -115,7 +116,7 @@ const StyledHome = styled.div`
     background-attachment: fixed;
 `
 
-const StyledLink = styled.div`
+const StyledLink = styled.a`
     background-color: ${({ bg }) => (bg ? bg : `white`)};
 
     &.google-podcasts {
