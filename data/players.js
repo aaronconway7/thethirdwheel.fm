@@ -30,13 +30,13 @@ const players = [
         label: `Youtube`,
         bg: `#fe0302`,
     },
-    {
-        href: `/soundcloud`,
-        icon: FaSoundcloud,
-        pre: `Listen on`,
-        label: `Soundcloud`,
-        bg: `#FE5000`,
-    },
+    // {
+    //     href: `/soundcloud`,
+    //     icon: FaSoundcloud,
+    //     pre: `Listen on`,
+    //     label: `Soundcloud`,
+    //     bg: `#FE5000`,
+    // },
 ]
 
 export default players

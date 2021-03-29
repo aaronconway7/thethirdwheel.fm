@@ -4,7 +4,7 @@ const extras = [
     {
         href: `/clips`,
         icon: FaYoutube,
-        pre: `Clips on`,
+        pre: `(Old) Clips on`,
         label: `Youtube`,
         bg: `#fe0302`,
     },
@@ -14,6 +14,13 @@ const extras = [
         pre: `Streaming on`,
         label: `Twitch`,
         bg: `#6441A4`,
+    },
+    {
+        href: `/gaming`,
+        icon: FaYoutube,
+        pre: `Gaming on`,
+        label: `Youtube`,
+        bg: `#fe0302`,
     },
     {
         href: `/patreon`,
