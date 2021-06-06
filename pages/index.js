@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import players from '../data/players'
 import extras from '../data/extras'
 import socials from '../data/socials'
+import Button from '../components/Button'
 
 const Home = () => (
     <StyledHome className={`bg-brand min-h-screen flex flex-col font-brand`}>
@@ -36,24 +37,7 @@ const Home = () => (
             </div>
             <div className={`grid gap-4`}>
                 {players.map((link, i) => (
-                    <Link href={link.href} key={i} passHref>
-                        <StyledLink
-                            className={`${link.label
-                                .toLowerCase()
-                                .replace(
-                                    ` `,
-                                    `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
-                            bg={link.bg}
-                            target={`_blank`}
-                            aria-label={link.label.toLowerCase().replace(` `, `-`)}
-                            rel={`noopener noreferrer`}
-                        >
-                            <span>{link.pre}</span>
-                            <link.icon className={`ml-1`} />
-                            <span className={`font-bold tracking-wide`}>{link.label}</span>
-                        </StyledLink>
-                    </Link>
+                    <Button link={link} key={i} />
                 ))}
                 <Link href={`/anchor`}>
                     <a
@@ -67,24 +51,7 @@ const Home = () => (
                 </Link>
                 <hr className={`border-2 border-dashed my-4`} />
                 {extras.map((link, i) => (
-                    <Link href={link.href} key={i} passHref>
-                        <StyledLink
-                            className={`${link.label
-                                .toLowerCase()
-                                .replace(
-                                    ` `,
-                                    `-`
-                                )} grid grid-flow-col auto-cols-max gap-1 items-center justify-center p-4 bg-white rounded-md shadow-md hover:shadow text-white cursor-pointer`}
-                            bg={link.bg}
-                            target={`_blank`}
-                            aria-label={link.label.toLowerCase().replace(` `, `-`)}
-                            rel={`noopener noreferrer`}
-                        >
-                            <span>{link.pre}</span>
-                            <link.icon className={`ml-1`} />
-                            <span className={`font-bold tracking-wide`}>{link.label}</span>
-                        </StyledLink>
-                    </Link>
+                    <Button link={link} key={i} />
                 ))}
             </div>
             <div className={`grid grid-flow-col auto-cols-max gap-2 mx-auto`}>
@@ -114,14 +81,6 @@ const StyledHome = styled.div`
     background-repeat: no-repeat;
     background-size: 100vw 200vh;
     background-attachment: fixed;
-`
-
-const StyledLink = styled.a`
-    background-color: ${({ bg }) => (bg ? bg : `white`)};
-
-    &.google-podcasts {
-        color: #0166d9 !important;
-    }
 `
 
 const StyledSocial = styled.a`
